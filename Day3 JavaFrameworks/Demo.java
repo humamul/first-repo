@@ -73,7 +73,7 @@ public class Demo {
 			System.out.println("Student does not exist");
 		}
 		
-		
+		em.close();
 		
 		
 		
