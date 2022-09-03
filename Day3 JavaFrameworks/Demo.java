@@ -22,7 +22,7 @@ public class Demo {
 		
 		EntityManager em = emf.createEntityManager();
 		//one per use case(DAO Method) we need Entity Manager;
-		//using emf we make Entity Manager object
+                //using emf we make Entity Manager object
 		// JPA appl -> EntMan -> ORM engine -> JDBC -> DB(forward query to database)
 		
 		//DML(insert,update ,delete, = need transactional area  em.getTransaction()
@@ -58,14 +58,20 @@ public class Demo {
 		
 		//=============Deletion/remove End================//
 		
-		Student s = em.find(Student.class, 10);
+		Student s = em.find(Student.class, 10);//returns the object// this will be in the persistence state, 
+		
+//		if we call em.clear(); this object will go to detached state and there will be no changes after this state
+	
+		
+		
+		
 		
 		
 		if(s!=null) {
 			em.getTransaction().begin();
 //			em.remove(s);
-			s.setMarks(s.getMarks()+100);
-			
+			s.setMarks(s.getMarks()+100); // s is in persistence state
+//after using em.clear() line 63, if you use em.merge(s) then it will update the table;
 			
 			em.getTransaction().commit();
 			System.out.println("Marks is graced");
@@ -73,10 +79,13 @@ public class Demo {
 			System.out.println("Student does not exist");
 		}
 		
-		em.close();
+		em.close(); // call on em obj then all the associated entity
 		
-		
-		
+		//=============Updating End================//
+
+//1.New State/transient state(not attached with the EM Obj,  Student s = new Student(10,39,"CHa");
+
+
 		
 		
 		
