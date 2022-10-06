@@ -27,4 +27,4 @@ mysql> select * from emp where empfname regexp "^[aeiou]";   ///// Starting with
 +-------+----------+-------+---------+---------+------------+--------+--------+
 1 row in set (0.00 sec)
 
-mysql> select * from emp where empfname regexp "^[aeiou].*[aeiou]$"; ////starting and ending with vowel
+mysql> select * from emp where empfname regexp "^[aeiou].*[aeiou]$"; ////starting and ending with vowel 
