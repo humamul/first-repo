@@ -1,5 +1,6 @@
 
-mysql>  select d.department DEPT,e.name NAAM,e.salary SALARY,dense_rank() over (partition by d.department order by e.salary desc) as rank_ from emp e inner join dep d on d.id = e.deptid;
+mysql>  select d.department DEPT,e.name NAAM,e.salary SALARY,dense_rank() over (partition by d.department order by e.salary desc) as rank_ from emp e inner 
+join dep d on d.id = e.deptid;
 +-------+-------+--------+-------+
 | DEPT  | NAAM  | SALARY | rank_ |
 +-------+-------+--------+-------+
@@ -13,7 +14,8 @@ mysql>  select d.department DEPT,e.name NAAM,e.salary SALARY,dense_rank() over (
 +-------+-------+--------+-------+
 7 rows in set (0.00 sec)
 
-mysql> select naam,salary,dept from ( select d.department DEPT,e.name NAAM,e.salary SALARY,dense_rank() over (partition by d.department order by e.salary desc) as rank_ from emp e inner join dep d on d.id = e.deptid) a where rank_<=3;
+mysql> select naam,salary,dept from ( select d.department DEPT,e.name NAAM,e.salary SALARY,dense_rank() over (partition by d.department order by e.salary desc)
+                                     as rank_ from emp e inner join dep d on d.id = e.deptid) a where rank_<=3;
 +-------+--------+-------+
 | naam  | salary | dept  |
 +-------+--------+-------+
