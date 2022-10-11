@@ -34,3 +34,10 @@ mysql> select * from emp where name like "_a%";
 |  6 | Randy |   8500 |      1 |
 +----+-------+--------+--------+
 4 rows in set (0.00 sec)
+  
+  
+  
+  
+  
+  
+  mysql>  select * from emp where empfname regexp "^[a-z][aeiou]";
