@@ -28,7 +28,7 @@ mysql> select naam,salary,dept from ( select d.department DEPT,e.name NAAM,e.sal
 +-------+--------+-------+
 6 rows in set (0.00 sec)
 
-mysql>
+mysql>select row_number() over (order by count(productid) desc),sub_category ,count(productid) c from products group by sub_category having c>300 order by c desc;
 
 
 
