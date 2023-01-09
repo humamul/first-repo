@@ -1,0 +1,57 @@
+Suppose you have a CSV file with the data below.
+
+A1: 5, A2: 7, A3: 9, B1: 3, B2: 8, B3: =4+5, C1: =5+A1, C2: =A2+B2, C3: =C2+B3
+
+1. Tackling the challenge 
+	
+	firstly I'll take input from the file using buffered reader (java.io package) and then using 
+	readLine(); i will take it as a string
+
+	->String data = br.readLine();
+
+	then will split that 
+	->String [] arr = data.split(",");
+	
+	have a hashMap to store it;
+	after spliting i will run a loop on arr (variable) then  
+	
+	for(int i=0;i<arr.length;i++){
+	
+	//in this loop i'll again split it by(":");
+	splitVar = arr[i].split(":");
+	now, splitVar[0] will be A1 or B1 etc and
+	 splitVar[1] will have the value or the formula
+	so before sending it to hashmap
+	
+	i will check the that if splitVar[1].contains("=") 
+	and then i will calculate it using some Evaluate dependency which will evaluate it for me 
+	or in this this case there is only sum so after getting '=' in the string 
+	i will use substring and remove "="  , then i will  again split it with "+" sign and
+	check that which one is having a variable if there is a variable i will check it in the 
+	hashmap if its already there or not , if its not there than definetly there will be a error.
+	other wise i will get the value and sum the output and store it in the hashmap
+	
+	}
+
+2. Errors that can occur
+	a. First error will be in the formula that can occur , suppose if already there is data which
+	is not entered in to hashmap , so how it will calculate the variable which is not available for us
+	 to use right now.
+	
+	b. Second error can when there is no value passed , and null pointer exception could be
+	there.
+	
+	c. File could be corrupted or number format exception could be there.
+
+3. Break the code:
+	user can break the code in to three parts i.e.
+	1. splitting it with commas
+	2.storing key(A1,A2,etc) and value(Numbers only) in to the hashmap, but if the formula given wasn't solve then the code will not work;
+	3.then checking it in the hashmap if it contains key then performing the action accordingly
+	4.If I'll be using dependency to evaluate the formula then there would be less chances of errors after using substring to remove "=" sign
+	5. then storing in to the hashmap.
+	6. Attempting to reference cells that do not exist in the input
+	7.Providing formulas with syntax errors
+	8.division by zero or other illegal operations.
+	
+	

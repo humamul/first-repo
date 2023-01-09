@@ -1,0 +1,12 @@
+while creating api you should be carefull about the following things;
+1.There should be proper handling of checked/unchecked exceptions .
+2. All the classes should have proper annotations so that the beans will get registered with the container and 
+3, beans should get injected whereever required into the dependent class.
+4. all the api's should work proper , global Exception handler should be there 
+5. No one should be able to access the api where there is security used .
+6. should have simplicity.
+7. Security for the users:Authenticate and authorize users: Implement authentication and authorization mechanisms to ensure that only authorized users can access the API.
+Validate input: Validate all input to the API to ensure that it is in the expected format and does not contain any malicious content.
+8 Use of DTOs should be there 
+9. No one should be able to get the private information through the database .
+10.Handle API errors gracefully: Make sure to handle API errors gracefully to ensure that the application does not crash or behave unexpectedly.
