@@ -1,0 +1,18 @@
+The Spring Bean Factory Container manages the lifecycle of beans, which includes several stages:
+
+Bean instantiation: The container creates an instance of the bean using one of the available instantiation methods, such as constructors or factory methods.
+
+Bean initialization: After the bean instance is created, the container initializes it by setting any properties or dependencies that have been configured.
+This can include things like injecting other beans, setting values for properties, or calling any initialization methods that have been annotated with @PostConstruct.
+
+Bean usage: The bean is now ready to be used and is available for injection into other beans or for direct usage by the application.
+
+Bean destruction: When the container is closed, or when the application context is shut down, the container will destroy the beans and release any resources they 
+are holding. This can include things like calling any methods that have been annotated with @PreDestroy, or closing any resources that have been injected.
+
+Bean Scopes: Spring Bean scopes defines the life cycle of a bean, Spring framework provides several scopes for different use cases. like singleton, prototype, request, 
+session, global-session, application, web-socket etc.
+
+It's important to note that not all Bean life cycle methods are called for all types of scopes. For example, when a Bean is scoped as "singleton" the @PostConstruct and
+@PreDestroy methods are called only once during the entire life cycle of the application, whereas in the case of "prototype" scope the @PostConstruct and
+@PreDestroy methods are called for each instance of the Bean.
