@@ -16,3 +16,24 @@ session, global-session, application, web-socket etc.
 It's important to note that not all Bean life cycle methods are called for all types of scopes. For example, when a Bean is scoped as "singleton" the @PostConstruct and
 @PreDestroy methods are called only once during the entire life cycle of the application, whereas in the case of "prototype" scope the @PostConstruct and
 @PreDestroy methods are called for each instance of the Bean.
+
+*************************************************************************************************************************************************************************
+
+In Spring, Autowiring is a mechanism that allows the framework to automatically resolve and set dependencies between beans. Autowiring can be done by constructor, setter method or by field.
+
+There are several modes of autowiring:
+
+no: This is the default mode and it means that autowiring is not enabled.
+
+byName: The container looks for a bean with the same name as the property that needs to be autowired.
+
+byType: The container looks for a bean with the same type as the property that needs to be autowired. If there are multiple beans of that type, the container will raise an exception.
+
+constructor: The container looks for a constructor with the most matching argument types and injects those beans.
+
+autodetect: The container will first try to autowire by constructor, and if that fails, it will fall back to autowiring by type.
+
+You can use @Autowired annotation on a constructor, setter method or a field to enable autowiring for that particular component.
+
+
+**********************************************************************************************************************************************************************
