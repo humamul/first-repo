@@ -1,0 +1,17 @@
+Spring MVC is a framework for building web applications using the Model-View-Controller (MVC) design pattern. It is a part of the Spring Framework and is 
+built on top of the Spring IoC container.
+
+In Spring MVC, the "Model" represents the data and business logic of the application, the "View" represents the user interface, and the "Controller" is responsible 
+for handling input and forwarding it to the appropriate Model or View.
+
+The basic flow of a Spring MVC application is as follows:
+
+A user sends an HTTP request to the web server.
+The DispatcherServlet (the front controller) receives the request and routes it to the appropriate controller.
+The controller handles the request and invokes the appropriate service(s) to process the request.
+The service(s) update the model data and return it to the controller.
+The controller selects the appropriate view to render the model data and returns the view name to the DispatcherServlet.
+The DispatcherServlet forwards the request to the selected view, which renders the final HTML output to the user.
+
+Spring MVC provides a lot of flexibility and extensibility, allowing developers to easily customize various aspects of the framework to suit the specific
+needs of their application
