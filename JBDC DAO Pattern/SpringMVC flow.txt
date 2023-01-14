@@ -15,3 +15,22 @@ The DispatcherServlet forwards the request to the selected view, which renders t
 
 Spring MVC provides a lot of flexibility and extensibility, allowing developers to easily customize various aspects of the framework to suit the specific
 needs of their application
+
+
+
+*******************************************************************************************************************************************************************
+If you are using Postman to test a Spring MVC application, the flow will be as follows:
+
+You will open the Postman application and set the request type to the appropriate HTTP verb (e.g. GET, POST, PUT, DELETE)
+You will set the request URL to the appropriate endpoint of your Spring MVC application.
+You may add any necessary headers and request body to the request.
+You will then send the request to the server by clicking the "Send" button.
+The request will be received by the DispatcherServlet (front controller) of the Spring MVC application.
+The DispatcherServlet will route the request to the appropriate controller based on the URL and the HTTP verb.
+The controller will handle the request, invoke the appropriate service(s) to process the request and update the model data.
+The controller will select the appropriate view to render the model data and return the view name to the DispatcherServlet.
+The DispatcherServlet will forward the request to the selected view.
+The view will render the final output, and the response will be sent back to Postman.
+In Postman, you can see the response including the status code, headers and response body.
+It's worth noting that you may see different behavior if your application has security mechanism like JWT and other, you may need to pass additional 
+headers or cookies to authenticate your request.
