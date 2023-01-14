@@ -1,3 +1,20 @@
+Spring MVC is a framework for building web applications using the Model-View-Controller (MVC) design pattern. It is part of the Spring framework, which is a popular Java-based framework for building enterprise applications. Spring MVC provides a powerful and flexible way to build web applications, and it is widely used for building web applications of all sizes and complexity.
+
+The MVC pattern separates the application into three main components: the model, the view, and the controller.
+
+The Model represents the data and the business logic of the application. It is responsible for holding and manipulating the data, and it is typically implemented
+using Java objects.
+
+The View represents the user interface of the application. It is responsible for displaying the data to the user and for handling user input. It is typically implemented using JSP, Thymeleaf or other template engine.
+
+The Controller is responsible for handling user requests and directing them to the appropriate view. It is typically implemented using a Java class annotated with @Controller.
+
+Spring MVC provides a powerful and flexible way to implement the MVC pattern by providing a set of annotations and interfaces that make it easy to define the model, the view, and the controller. It also provides a powerful framework for handling requests, validating input, and handling errors. Additionally, it provides support
+for a wide variety of view technologies, including JSP, Thymeleaf, and others.
+
+
+**********************************************************************************************************************************************************************
+
 Spring MVC is a framework for building web applications using the Model-View-Controller (MVC) design pattern. It is a part of the Spring Framework and is 
 built on top of the Spring IoC container.
 
