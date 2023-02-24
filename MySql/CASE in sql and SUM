@@ -1,0 +1,9 @@
+SELECT m.name,t.name,t.task_status,t.module module_id,t.actual_effort,COUNT(*),
+(case 
+when sum(task_status = "TASK_STATUS.COMPLETED") = count(*) then "COMPLETED"
+when sum(task_status = "TASK_STATUS.NOT_YET_STARTED") = count(*) then "NOT_STARTED"
+else "INCOMPLETE"
+end) cas
+ FROM project_db.task t right join project_db.module m on t.module = m.id where t.module is not null
+ group by module_id 
+ order by m.id ;
